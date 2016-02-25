@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description xmlns:xs="http://www.w3.org/TR/2008/REC-xml-20081126#" rdf:about="">
+<RTML xmlns="http://www.rtml.org/v3.2#">
+<rdf:Description rdf:about="#RTML">
+<version>3.2</version>
+<mode>resource</mode>
+<uid>rtml://www.opentel.net/STELLA-I</uid>
+<xsi:schemaLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance#">RTML-v3.2.xsd</xsi:schemaLocation>
+<xs:comment> This is only a fragment </xs:comment>
+<Telescope>
+<rdf:Description rdf:about="#RTML/Telescope">
+<FocalLength>
+<rdf:Description rdf:about="#RTML/Telescope/FocalLength">
+<units>meters</units>
+<rdf:value>9.6</rdf:value>
+</rdf:Description>
+</FocalLength>
+<Camera>
+<rdf:Description rdf:about="#RTML/Telescope/Camera">
+<FilterWheel>
+<rdf:Description rdf:about="#RTML/Telescope/Camera/FilterWheel">
+<Filter>
+<rdf:Description rdf:about="#RTML/Telescope/Camera/FilterWheel/Filter">
+<type>Johnson_U</type>
+<name>U</name>
+</rdf:Description>
+</Filter>
+<Filter>
+<rdf:Description rdf:about="#RTML/Telescope/Camera/FilterWheel/Filter_2">
+<type>Johnson_B</type>
+<name>B</name>
+</rdf:Description>
+</Filter>
+</rdf:Description>
+</FilterWheel>
+</rdf:Description>
+</Camera>
+</rdf:Description>
+</Telescope>
+</rdf:Description>
+</RTML>
+</rdf:Description>
+</rdf:RDF>

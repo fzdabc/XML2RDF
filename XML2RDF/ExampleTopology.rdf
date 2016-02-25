@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description xmlns:xs="http://www.w3.org/TR/2008/REC-xml-20081126#" rdf:about="">
+<CAEXFile xmlns="#">
+<rdf:Description rdf:about="#CAEXFile">
+<FileName>ExampleTopology.aml</FileName>
+<SchemaVersion>2.15</SchemaVersion>
+<xsi:noNamespaceSchemaLocation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance#">./Source/CAEX_ClassModel_V2.15.xsd</xsi:noNamespaceSchemaLocation>
+<AdditionalInformation>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation">
+<AutomationMLVersion>2.0</AutomationMLVersion>
+</rdf:Description>
+</AdditionalInformation>
+<AdditionalInformation>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2">
+<WriterHeader>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2/WriterHeader">
+<WriterName>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2/WriterHeader/WriterName">
+<rdf:value>AutomationML e.V.</rdf:value>
+</rdf:Description>
+</WriterName>
+<WriterID>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2/WriterHeader/WriterID">
+<rdf:value>AutomationML e.V.</rdf:value>
+</rdf:Description>
+</WriterID>
+<WriterVendor>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2/WriterHeader/WriterVendor">
+<rdf:value>AutomationML e.V.</rdf:value>
+</rdf:Description>
+</WriterVendor>
+<WriterVendorURL>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2/WriterHeader/WriterVendorURL">
+<rdf:value>www.AutomationML.org</rdf:value>
+</rdf:Description>
+</WriterVendorURL>
+<WriterVersion>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2/WriterHeader/WriterVersion">
+<rdf:value>1.0</rdf:value>
+</rdf:Description>
+</WriterVersion>
+<WriterRelease>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2/WriterHeader/WriterRelease">
+<rdf:value>1.0</rdf:value>
+</rdf:Description>
+</WriterRelease>
+<LastWritingDateTime>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2/WriterHeader/LastWritingDateTime">
+<rdf:value>2012-02-20</rdf:value>
+</rdf:Description>
+</LastWritingDateTime>
+<WriterProjectTitle>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2/WriterHeader/WriterProjectTitle">
+<rdf:value>AutomationML Tutorial Examples</rdf:value>
+</rdf:Description>
+</WriterProjectTitle>
+<WriterProjectID>
+<rdf:Description rdf:about="#CAEXFile/AdditionalInformation_2/WriterHeader/WriterProjectID">
+<rdf:value>AutomationML Tutorial Examples</rdf:value>
+</rdf:Description>
+</WriterProjectID>
+</rdf:Description>
+</WriterHeader>
+</rdf:Description>
+</AdditionalInformation>
+<ExternalReference>
+<rdf:Description rdf:about="#CAEXFile/ExternalReference">
+<Path>Libs/RoleClass Libraries/AutomationMLBaseRoleClassLib.aml</Path>
+<Alias>BaseRoleClassLib</Alias>
+</rdf:Description>
+</ExternalReference>
+<ExternalReference>
+<rdf:Description rdf:about="#CAEXFile/ExternalReference_2">
+<Path>Libs/InterfaceClass Libraries/AutomationMLInterfaceClassLib.aml</Path>
+<Alias>BaseInterfaceClassLib</Alias>
+</rdf:Description>
+</ExternalReference>
+<InstanceHierarchy>
+<rdf:Description rdf:about="#CAEXFile/InstanceHierarchy">
+<Name>ManufacturingSystem</Name>
+<InternalElement>
+<rdf:Description rdf:about="#CAEXFile/InstanceHierarchy/InternalElement">
+<Name>firstScrewdriver</Name>
+<ID>{788eb291-f103-4fdc-aba0-4893b599f556}</ID>
+<RefBaseSystemUnitPath>LibOfCommonTools/ElectricScrewdriver</RefBaseSystemUnitPath>
+<Attribute>
+<rdf:Description rdf:about="#CAEXFile/InstanceHierarchy/InternalElement/Attribute">
+<Name>New Attribute</Name>
+</rdf:Description>
+</Attribute>
+<ExternalInterface>
+<rdf:Description rdf:about="#CAEXFile/InstanceHierarchy/InternalElement/ExternalInterface">
+<Name>EnergySupply</Name>
+<ID>{5f535d4c-dd46-4c1c-898c-4e58419048b6}</ID>
+<RefBaseClassPath>MyInterfaces/Energy</RefBaseClassPath>
+</rdf:Description>
+</ExternalInterface>
+<SupportedRoleClass>
+<rdf:Description rdf:about="#CAEXFile/InstanceHierarchy/InternalElement/SupportedRoleClass">
+<RefRoleClassPath>ManufacturingRoleClasses/Tool</RefRoleClassPath>
+</rdf:Description>
+</SupportedRoleClass>
+<RoleRequirements>
+<rdf:Description rdf:about="#CAEXFile/InstanceHierarchy/InternalElement/RoleRequirements">
+<RefBaseRoleClassPath>ManufacturingRoleClasses/Tool</RefBaseRoleClassPath>
+</rdf:Description>
+</RoleRequirements>
+</rdf:Description>
+</InternalElement>
+<InternalElement>
+<rdf:Description rdf:about="#CAEXFile/InstanceHierarchy/InternalElement_2">
+<Name>secondScrewdriver</Name>
+<ID>{19dcf818-4716-4fc1-a85f-28e1938c4c3a}</ID>
+<RefBaseSystemUnitPath>LibOfCommonTools/ElectricScrewdriver</RefBaseSystemUnitPath>
+<ExternalInterface>
+<rdf:Description rdf:about="#CAEXFile/InstanceHierarchy/InternalElement_2/ExternalInterface">
+<Name>EnergySupply</Name>
+<ID>50e10905-ac18-413c-afab-ad8ed1569fff</ID>
+<RefBaseClassPath>MyInterfaces/Energy</RefBaseClassPath>
+</rdf:Description>
+</ExternalInterface>
+<SupportedRoleClass>
+<rdf:Description rdf:about="#CAEXFile/InstanceHierarchy/InternalElement_2/SupportedRoleClass">
+<RefRoleClassPath>ManufacturingRoleClasses/Tool</RefRoleClassPath>
+</rdf:Description>
+</SupportedRoleClass>
+<RoleRequirements>
+<rdf:Description rdf:about="#CAEXFile/InstanceHierarchy/InternalElement_2/RoleRequirements">
+<RefBaseRoleClassPath>ManufacturingRoleClasses/Tool</RefBaseRoleClassPath>
+</rdf:Description>
+</RoleRequirements>
+</rdf:Description>
+</InternalElement>
+</rdf:Description>
+</InstanceHierarchy>
+<InterfaceClassLib>
+<rdf:Description rdf:about="#CAEXFile/InterfaceClassLib">
+<Name>MyInterfaces</Name>
+<Version>
+<rdf:Description rdf:about="#CAEXFile/InterfaceClassLib/Version">
+<name>testcase</name>
+<rdf:value>1.0</rdf:value>
+</rdf:Description>
+</Version>
+<InterfaceClass>
+<rdf:Description rdf:about="#CAEXFile/InterfaceClassLib/InterfaceClass">
+<Name>Energy</Name>
+<RefBaseClassPath>BaseInterfaceClassLib@AutomationMLInterfaceClassLib/AutomationMLBaseInterface</RefBaseClassPath>
+</rdf:Description>
+</InterfaceClass>
+</rdf:Description>
+</InterfaceClassLib>
+<RoleClassLib>
+<rdf:Description rdf:about="#CAEXFile/RoleClassLib">
+<Name>ManufacturingRoleClasses</Name>
+<Version>
+<rdf:Description rdf:about="#CAEXFile/RoleClassLib/Version">
+<rdf:value>2.0</rdf:value>
+</rdf:Description>
+</Version>
+<RoleClass>
+<rdf:Description rdf:about="#CAEXFile/RoleClassLib/RoleClass">
+<Name>Tool</Name>
+<RefBaseClassPath>BaseRoleClassLib@AutomationMLBaseRoleClassLib/AutomationMLBaseRole</RefBaseClassPath>
+</rdf:Description>
+</RoleClass>
+</rdf:Description>
+</RoleClassLib>
+<SystemUnitClassLib>
+<rdf:Description rdf:about="#CAEXFile/SystemUnitClassLib">
+<Name>LibOfCommonTools</Name>
+<Version>
+<rdf:Description rdf:about="#CAEXFile/SystemUnitClassLib/Version">
+<rdf:value>3.0</rdf:value>
+</rdf:Description>
+</Version>
+<SystemUnitClass>
+<rdf:Description rdf:about="#CAEXFile/SystemUnitClassLib/SystemUnitClass">
+<Name>ElectricScrewdriver</Name>
+<ExternalInterface>
+<rdf:Description rdf:about="#CAEXFile/SystemUnitClassLib/SystemUnitClass/ExternalInterface">
+<Name>EnergySupply</Name>
+<ID>dd0e0dfe-10f8-4068-845b-9c29699ac79b</ID>
+<RefBaseClassPath>MyInterfaces/Energy</RefBaseClassPath>
+</rdf:Description>
+</ExternalInterface>
+<SupportedRoleClass>
+<rdf:Description rdf:about="#CAEXFile/SystemUnitClassLib/SystemUnitClass/SupportedRoleClass">
+<RefRoleClassPath>ManufacturingRoleClasses/Tool</RefRoleClassPath>
+</rdf:Description>
+</SupportedRoleClass>
+</rdf:Description>
+</SystemUnitClass>
+</rdf:Description>
+</SystemUnitClassLib>
+</rdf:Description>
+</CAEXFile>
+</rdf:Description>
+</rdf:RDF>

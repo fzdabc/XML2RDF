@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<contact-info>
+	<person>
+	   <name>Tanmay Patil</name>
+	   <id>TutorialsPoint</id>
+	   <phone>(011) 123-4567</phone>
+	</person>
+	<person>
+	   <name>jack</name>
+	   <id>asdf</id>
+	   <phone>123-4567</phone>
+	</person>
+	<person>
+	   <name>ted</name>
+	   <id>qwer</id>
+	   <phone>4567-123</phone>
+	</person>
+</contact-info>

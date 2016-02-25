@@ -44,7 +44,7 @@ public class Settings {
 			SetConfigurationFilesName(tempConfigFiles);
 		} 
 		
-		try {							
+		try {	
 			for(String fileURI: configFiles) {
 				conf.load(fileURI);
 			}			

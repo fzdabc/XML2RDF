@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description xmlns:xs="http://www.w3.org/TR/2008/REC-xml-20081126#" rdf:about="">
+<contact-info xmlns="#">
+<rdf:Description rdf:about="#contact-info">
+<person>
+<rdf:Description rdf:about="#contact-info/person">
+<name>Tanmay</name>
+<id>TutorialsPoint</id>
+<phone>0123123</phone>
+<height>
+<rdf:Description rdf:about="#contact-info/person/height">
+<rdf:value>180</rdf:value>
+</rdf:Description>
+</height>
+<weight>
+<rdf:Description rdf:about="#contact-info/person/weight">
+<rdf:value>TutorialsPoint</rdf:value>
+</rdf:Description>
+</weight>
+</rdf:Description>
+</person>
+<person>
+<rdf:Description rdf:about="#contact-info/person_2">
+<name>Danmay</name>
+<id>DutorialsPoint</id>
+<phone>123123</phone>
+<height>
+<rdf:Description rdf:about="#contact-info/person_2/height">
+<rdf:value>181</rdf:value>
+</rdf:Description>
+</height>
+<weight>
+<rdf:Description rdf:about="#contact-info/person_2/weight">
+<rdf:value>DutorialsPoint</rdf:value>
+</rdf:Description>
+</weight>
+</rdf:Description>
+</person>
+<person>
+<rdf:Description rdf:about="#contact-info/person_3">
+<name>Canmay</name>
+<id>CutorialsPoint</id>
+<phone>234234</phone>
+<height>
+<rdf:Description rdf:about="#contact-info/person_3/height">
+<rdf:value>182</rdf:value>
+</rdf:Description>
+</height>
+<weight>
+<rdf:Description rdf:about="#contact-info/person_3/weight">
+<rdf:value>CutorialsPoint</rdf:value>
+</rdf:Description>
+</weight>
+</rdf:Description>
+</person>
+</rdf:Description>
+</contact-info>
+</rdf:Description>
+</rdf:RDF>

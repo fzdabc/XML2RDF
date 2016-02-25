@@ -80,6 +80,7 @@ public class TemplateRDF {
 	protected void assignMetaResource(TemplateResource res, NameSpaceMapping mapping, String pattern, XSDDatatype type) {
 		if(mapping != null && !mapping.isEmpty()) {
 			setNameSpaceMapping(mapping.prefixName,  mapping.URI);
+			//System.out.println(mapping.URI);//testcase 1
 			res.mapping.copy(mapping);
 		} else if (mapping == null) {
 			mapping = new NameSpaceMapping("defaultNS",getDefaultNameSpace());
@@ -171,6 +172,7 @@ public class TemplateRDF {
 			}
 		} else if(spoComp.metaData.objectPattern.isXPath) {
 			// Only object use xpath.
+			//System.out.println("test");//testcase 1
 			spoComp.metaData.SLCAPath = spoComp.metaData.objectPattern.xpath;
 		} else {
 			// If the added triple patterns don't contain any xpath pattern. 
@@ -225,19 +227,25 @@ public class TemplateRDF {
 		String tempResult = "";		
 		if(!pattern.isLiteral && !pattern.mapping.isEmpty()) {
 			if(pattern.mapping.URI.getValue().equals("_:")) {
+				//System.out.println("test");//testcase
 				tempResult += "_:" + outputObj;
 			} else if(((String) pattern.mapping.URI.getValue()).endsWith("/")) {
+				//System.out.println("test");//testcase
 				tempResult += "<" + pattern.mapping.URI + outputObj + "> ";
 			} else {
+				//System.out.println("test");//testcase
 				tempResult += "<" + pattern.mapping.URI + "/" + outputObj + "> ";
 			}
 		} else if(!pattern.isLiteral) {
 			if(defaultNameSpace.endsWith("/")) {
+				//System.out.println("test");//testcase
 				tempResult += "<" + defaultNameSpace + outputObj + ">";
 			} else {
+				//System.out.println("test");//testcase
 				tempResult += "<" + defaultNameSpace + "/" + outputObj + ">";
 			}
 		} else {
+			System.out.println("test");//testcase
 			tempResult += "\"" + outputObj + "\" ";
 		}
 		return tempResult;
@@ -259,6 +267,7 @@ public class TemplateRDF {
 						object = (String) objectName.getValue();
 						String tempResult = "";
 						tempResult += setOneOfNTriples(tempComp.metaData.subjectPattern, subject);
+//						tempResult += setOneOfNTriples(tempComp.metaData.subjectPattern, subject);
 						tempResult += setOneOfNTriples(tempComp.metaData.predicatePattern, predicate);
 						tempResult += setOneOfNTriples(tempComp.metaData.objectPattern, object);
 						tempResult += " .";

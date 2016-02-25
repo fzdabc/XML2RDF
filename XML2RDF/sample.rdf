@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description xmlns:xs="http://www.w3.org/TR/2008/REC-xml-20081126#" rdf:about="">
+<contact-info xmlns="#">
+<rdf:Description rdf:about="#contact-info">
+<person>
+<rdf:Description rdf:about="#contact-info/person">
+<name>
+<rdf:Description rdf:about="#contact-info/person/name">
+<rdf:value>Tanmay Patil</rdf:value>
+</rdf:Description>
+</name>
+<id>
+<rdf:Description rdf:about="#contact-info/person/id">
+<rdf:value>TutorialsPoint</rdf:value>
+</rdf:Description>
+</id>
+<phone>
+<rdf:Description rdf:about="#contact-info/person/phone">
+<rdf:value>(011) 123-4567</rdf:value>
+</rdf:Description>
+</phone>
+</rdf:Description>
+</person>
+<person>
+<rdf:Description rdf:about="#contact-info/person_2">
+<name>
+<rdf:Description rdf:about="#contact-info/person_2/name">
+<rdf:value>jack</rdf:value>
+</rdf:Description>
+</name>
+<id>
+<rdf:Description rdf:about="#contact-info/person_2/id">
+<rdf:value>asdf</rdf:value>
+</rdf:Description>
+</id>
+<phone>
+<rdf:Description rdf:about="#contact-info/person_2/phone">
+<rdf:value>123-4567</rdf:value>
+</rdf:Description>
+</phone>
+</rdf:Description>
+</person>
+<person>
+<rdf:Description rdf:about="#contact-info/person_3">
+<name>
+<rdf:Description rdf:about="#contact-info/person_3/name">
+<rdf:value>ted</rdf:value>
+</rdf:Description>
+</name>
+<id>
+<rdf:Description rdf:about="#contact-info/person_3/id">
+<rdf:value>qwer</rdf:value>
+</rdf:Description>
+</id>
+<phone>
+<rdf:Description rdf:about="#contact-info/person_3/phone">
+<rdf:value>4567-123</rdf:value>
+</rdf:Description>
+</phone>
+</rdf:Description>
+</person>
+</rdf:Description>
+</contact-info>
+</rdf:Description>
+</rdf:RDF>

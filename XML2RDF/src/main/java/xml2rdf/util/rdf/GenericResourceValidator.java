@@ -50,11 +50,14 @@ public class GenericResourceValidator {
 	 */
 	public boolean IsAttributeInGivenStatement(String referencePredicateAttribute, String targetAttribute) {		
 		if(targetAttribute.length() >0) {
-			// System.out.println("referenceAttr:" + referencePredicateAttribute + " , targetAttr:" + targetAttribute);
+			 //System.out.println("referenceAttr:" + referencePredicateAttribute + " , targetAttr:" + targetAttribute); //testcase
 			if(targetAttribute.indexOf('#') ==0 || targetAttribute.indexOf('@') ==0  ) {
+				//System.out.println("if");//testcase
 				return referencePredicateAttribute.substring(1).toLowerCase().equals(targetAttribute.substring(1).toLowerCase());
 			} else {
-				return referencePredicateAttribute.substring(1).toLowerCase().equals(targetAttribute);
+				//System.out.println("else: ref: "+ referencePredicateAttribute.substring(1)+" targ: "+ targetAttribute);//testcase
+				return referencePredicateAttribute.substring(1).equals(targetAttribute);
+				//return referencePredicateAttribute.substring(1).toLowerCase().equals(targetAttribute);//origin
 			}
 		} 
 		return false;

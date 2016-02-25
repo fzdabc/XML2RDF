@@ -118,7 +118,8 @@ public class CustomizedSaxYFilterExample4 {
 				    	Path file = new Path(fs.getUri().toString() +  filename);
 				    	@SuppressWarnings("deprecation")
 				    	SequenceFile.Reader reader = new SequenceFile.Reader(fs, file, conf);
-			    		// reader.readSequenceFile(filename);			    							   
+			    		// reader.readSequenceFile(filename);
+				    	//Text key = (Text) ReflectionUtils.newInstance(reader.getKeyClass(), conf);
 				    	Text key = (Text) ReflectionUtils.newInstance(reader.getKeyClass(), conf);
 						Text value = (Text) ReflectionUtils.newInstance(reader.getValueClass(), conf);
 						while(reader.next(key,value)) {

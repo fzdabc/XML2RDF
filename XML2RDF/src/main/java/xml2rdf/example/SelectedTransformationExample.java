@@ -27,9 +27,9 @@ public class SelectedTransformationExample {
 			long startTime = System.currentTimeMillis();
 			
 			GenericTransformer trans = new GenericTransformer();
-			trans.transform("publications.xml","publications.rdf"); 
+			trans.transform("Example.xml","Example.rdf"); 
 			//long startTime = System.currentTimeMillis();
-			SelectedTransformer myTransformer = new SelectedTransformer("publications.rdf");
+			SelectedTransformer myTransformer = new SelectedTransformer("Example.rdf");
 			
 			/**
 			 * For creating user-defined RDF resources, add templates which should define "Subject" and "Predicate". Note that the remaining part we don't indicate is "Object". 
@@ -46,7 +46,8 @@ public class SelectedTransformationExample {
 	//
 	//		 // write it to standard out
 	//		 model.write(System.out,"N-TRIPLES");
-			// Find XML tags which should be formulated as XPath '//size' elements for Subject and use the elements' contexts as Predicate.
+			// Find XML tags which should be formulated as XPath '
+			//size' elements for Subject and use the elements' contexts as Predicate.
 			//myTransformer.AddTemplate("response/results/result/metadata/oaf:entity/extraInfo/citations/citation/rawText", "value()");
 			// Find XML tags which should be formulated as XPath elements for Subject and use the elements' attribute name as Predicate.
 			// In this case, subject is "/response/results/result" and "@classname" indicates the attribute name:"classname" 
@@ -54,8 +55,19 @@ public class SelectedTransformationExample {
 			//myTransformer.AddTemplate("//publisher", "value()");
 			//myTransformer.AddTemplate("//journal", "value()");
 			//myTransformer.AddTemplate("//title", "value()");
-			myTransformer.AddTemplate("//title", "@classname");
-			//myTransformer.AddTemplate("//originalId", "value()");
+myTransformer.AddTemplate("/response/results/result", "@classname");			
+myTransformer.AddTemplate("//size", "value()");
+//myTransformer.AddTemplate("/response/results/result", "@objidentifier");
+//myTransformer.AddTemplate("/response/header/size", "value()");//bug fixed
+myTransformer.AddTemplate("/response/results/result", "@classid");
+//myTransformer.AddTemplate("/response/results/result", "@schemename");
+//myTransformer.AddTemplate("/response/results/result", "@schemeid");
+			
+			//myTransformer.AddTemplate("/response/results/result", "@value");
+			
+			//myTransformer.AddTemplate("//AdditionalInformation", "//WriterID");
+			
+		  //myTransformer.AddTemplate("//originalId", "value()");
 			//myTransformer.AddTemplate("//dateofacceptance", "value()");
 			//myTransformer.AddTemplate("//citations/citation/rawText", "value()");
 			//myTransformer.AddTemplate("//result/header/dri:objIdentifier", "value()");
@@ -74,22 +86,24 @@ public class SelectedTransformationExample {
 		}
 //		// System.in.read();
 //		
-		//System.out.println("-----------Print out TURTLE format.-----------------");
+		System.out.println("-----------Print out TURTLE format.-----------------");
 		model.write(System.out,"TURTLE");	
-		//System.out.println("-----------End of printing TURTLE format--------------------");
+		System.out.println("-----------End of printing TURTLE format--------------------");
 		System.out.println("Time elapsed: " + SumTime/runTimes);
 		// System.out.println("Used memory is bytes: " + memory);
 //		/**
 //		 * Or output the selected triples
 //		 */
-		/*
+		
 		System.out.println("-----------Print out self-defined format.-----------------");
-		ArrayList<Statement> retrievedStatements=myTransformer.DoSelect("/response/header/size", "value()");
+		SelectedTransformer myTransformer =new SelectedTransformer("example.rdf");;
+		ArrayList<Statement> retrievedStatements= myTransformer.DoSelect("/response/header/size", "value()");
 		for(Statement myStatement: retrievedStatements) {
 			System.out.println(myStatement.getSubject() + "," + myStatement.getPredicate().getLocalName() + "," + myStatement.getObject());
 		}
+		
 		System.out.println("----------End of printing self-defined format.-----------------");
-		*/
+		
 		
 	}
 

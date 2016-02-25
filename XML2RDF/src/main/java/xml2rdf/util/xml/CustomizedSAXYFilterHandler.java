@@ -60,7 +60,7 @@ public class CustomizedSAXYFilterHandler extends DefaultHandler {
 	
 	protected String outputSubject = "", outputPredicate = "", outputObject = ""; 
 	/**
-	 * Xpath List. Record current xpaht elements.
+	 * Xpath List. Record current Xpath elements.
 	 */
 	protected List<String> currentXPathList = new ArrayList<String>() {
 
@@ -183,12 +183,15 @@ public class CustomizedSAXYFilterHandler extends DefaultHandler {
 		if(this.mainTemplateRDF.currentMaintainedList.size() > 0 ) {
 			for(SPOComponent comp: this.mainTemplateRDF.currentMaintainedList) {
 				// subject pattern.
+				//System.out.println("test");//testcase 1
 				if(comp.metaData.subjectPattern.isXPath) {
 					// Check the condition matched or not.  
 					boolean hasConditionAttributes = !comp.metaData.subjectPattern.conditionAttributeName.isEmpty();
 					boolean isMatched = false;
+					//System.out.println("test1");//testcase 0
 					if(hasConditionAttributes) {						
 						for(int i = 0; i < attributes.getLength(); ++i) {
+							//System.out.println("test2");//testcase 0
 							if(attributes.getQName(i).equals(comp.metaData.subjectPattern.conditionAttributeName) &&
 									attributes.getValue(i).equals(comp.metaData.subjectPattern.conditionAttributeValue)) {
 								isMatched = true;
@@ -220,7 +223,7 @@ public class CustomizedSAXYFilterHandler extends DefaultHandler {
 				}
 				// Object pattern
 				if(comp.metaData.objectPattern.isXPath) {
-					
+					//System.out.println("test");//testcase 1
 					boolean hasConditionAttributes = !comp.metaData.objectPattern.conditionAttributeName.isEmpty();
 					boolean isMatched = false;
 					if(hasConditionAttributes) {						

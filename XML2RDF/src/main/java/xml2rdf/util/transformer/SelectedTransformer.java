@@ -25,7 +25,7 @@ public class SelectedTransformer{
 	protected boolean modelsHaveBeenSet = false;
 	private boolean useParallelMode = false;
 	protected String filePath = ""; 
-	// template for selecting desire subject's and predicate's conditions. 
+	// template for selecting desire subject's and predicate's conditions.
 	protected HashMap<String, ArrayList<String>> template = new HashMap<String, ArrayList<String>>();
 	GenericResourceValidator validator = new GenericResourceValidator();
 	
@@ -41,10 +41,11 @@ public class SelectedTransformer{
 	        if (in == null) {
 	            throw new IllegalArgumentException( "File: " + filePath + " not found");
 	        } 
-	        // Do not show Warnning Message here.
+	        // Do not show Warning Message here.
 	        RDFDefaultErrorHandler.silent =true;
 	        // read the RDF/XML file        
 	        model.read( in, "" );
+	        //test case outputModel.setNsPrefixes(model.getNsPrefixMap());
 	        outputModel.setNsPrefixes(model);
 	        modelsHaveBeenSet = true;
 		}        
@@ -78,7 +79,8 @@ public class SelectedTransformer{
 	public void AddTemplate(String subjectXPath, String attribute) {
 		ArrayList<String> object = null;
 		if( (object = template.get(subjectXPath)) != null) {
-			object.add(attribute);
+			object.add(attribute);// same Xpath with different value() or @name		
+			//System.out.println(object.size());  //testcase
 		} else {
 			object = new ArrayList<String>();
 			object.add(attribute);
@@ -91,7 +93,8 @@ public class SelectedTransformer{
 			ArrayList<SelectedTransformerThread> threadPool = new ArrayList<SelectedTransformerThread>();
 			int taskNumber = 1;
 			for(Entry<String,ArrayList<String>> object: template.entrySet()) {
-				for(String attribute: object.getValue()) {					
+				for(String attribute: object.getValue()) {
+					//System.out.println("test");//value(),@classid,@classname....testcase
 					SelectedTransformerThread tempThread = new SelectedTransformerThread(this.model, this.outputModel);
 					threadPool.add(tempThread);
 					tempThread.start(taskNumber++, new ArrayList<Statement>(),object.getKey(), attribute);
@@ -113,18 +116,24 @@ public class SelectedTransformer{
 			}
 		} else {
 			for(Entry<String,ArrayList<String>> object: template.entrySet()) {
-				for(String attribute: object.getValue())
+				for(String attribute: object.getValue()){
+					//System.out.println(object.getValue());
 					outputModel.add(DoSelect(object.getKey(), attribute));
+					//System.out.println(object.getKey());	
+				}
+					//System.out.println(outputModel.size()); //testcase
+					
 			}
 		}
+		//return outputModel;
 		return GetSelectedOutputModel();
 	}
 	
 	public ArrayList<Statement> DoSelect(String subjectXPath, String attribute) {
 		ArrayList<Statement> result = new ArrayList<Statement>(); 
 		StmtIterator iter = null;
-		iter = model.listStatements(
-			new SimpleSelector(null, null, (RDFNode) null ) {
+		iter = model.listStatements(new SimpleSelector(null, null, (RDFNode) null ) 
+		{
 				public boolean selects(Statement s) {
 
 					try {
@@ -138,9 +147,12 @@ public class SelectedTransformer{
 							 *  #subject classname 'keyword'
 							 *  #subject schemeid  'dnet:result_subject'
 							 */
+							//System.out.println("not subject prob");
 							if(	validator.IsAttribute(attribute) && validator.IsAttributeInGivenStatement(attribute,s.getPredicate().getLocalName())) {
+								//System.out.println("not attribute prob");//testcase
 								return true;
 							} else if (!validator.IsAttribute(attribute) && validator.IsAcquireValue(attribute, s.getPredicate().getLocalName())) {
+								//System.out.println("not value prob");//testcase
 								return true;
 							}
 							return false;
@@ -151,11 +163,13 @@ public class SelectedTransformer{
 					}
 					return false;
 				}					
-		});
+		}
+		);
 
         while (iter.hasNext()) {        	
             result.add(iter.nextStatement());
         }
+        System.out.println(result.get(0).getPredicate().getLocalName()+"  Result size: " + result.size()); //testcase
         return result;
 	}
 }

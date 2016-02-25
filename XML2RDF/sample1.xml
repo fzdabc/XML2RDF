@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<contact-info>
+	<person name = "Tanmay" id = "TutorialsPoint"  phone = "0123123">
+	   <height>180</height>
+	   <weight>TutorialsPoint</weight>
+	</person>
+	<person name = "Danmay" id = "DutorialsPoint"  phone = "123123">
+	   <height>181</height>
+	   <weight>DutorialsPoint</weight>
+	</person>
+	<person name = "Canmay" id = "CutorialsPoint"  phone = "234234">
+	   <height>182</height>
+	   <weight>CutorialsPoint</weight>
+	</person>
+</contact-info>

@@ -37,22 +37,22 @@ public class CustomizedSaxYFilterExample {
 			    // For STELL-I.rtml
 			    
 //			    template.addTriplePattern("RTMLData", null, "type", null, "/RTML/Telescope/Camera/FilterWheel/Filter/@type", null);
-//			    template.addTriplePattern("/RTML/Telescope/Camera/FilterWheel/Filter/@type", null, "FocalLength", null, "/RTML/Telescope/FocalLength/text()",XSDDatatype.XSDinteger);
+			    template.addTriplePattern("/RTML/Telescope/Camera/FilterWheel/Filter/@type", null, "FocalLength", null, "/RTML/Telescope/FocalLength/text()",XSDDatatype.XSDinteger);
 //			    template.addTriplePattern("/RTML/Telescope/Camera/FilterWheel/Filter/@type", null, "units", null, "meters",XSDDatatype.XSDstring);
 //			    template.addTriplePattern("Author", null, "a", null, "person",XSDDatatype.XSDstring);
 			    //template.addTriplePattern("/RTML/Telescope/Camera/FilterWheel/Filter/@name", null,"type", null,"CameraType",XSDDatatype.XSDstring);		   
 			   // template.addTriplePattern("/RTML/Telescope/Camera/FilterWheel/Filter/@name", null,"modelType", null,"/RTML/Telescope/Camera/FilterWheel/Filter/@type",XSDDatatype.XSDstring);
 			    // For publicatios.xml. It's subject is realted to :OpenAIREDataModel.
-			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, "a", null, "bibo:Publication", null);
-			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, "swpo:hasTitle", null, "/response/results/result/metadata/oaf:entity/oaf:result/title/text()", XSDDatatype.XSDstring);			    
-			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":objectIdentifier", null, "/response/results/result/header/dri:objIdentifier/text()",null);
-			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":dateofacceptance", null, "/response/results/result/metadata/oaf:entity/oaf:result/dateofacceptance/text()",XSDDatatype.XSDdate);
-			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":language", null, "/response/results/result/metadata/oaf:entity/oaf:result/language/@classname",XSDDatatype.XSDstring);
-			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":hasPublisher", null, "/response/results/result/metadata/oaf:entity/oaf:result/publisher/text()",XSDDatatype.XSDstring);
-			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":description", null, "/response/results/result/metadata/oaf:entity/oaf:result/description/text()",XSDDatatype.XSDstring);
-			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":license", null, "/response/results/result/metadata/oaf:entity/oaf:result/bestlicense/@classid",XSDDatatype.XSDstring);
-			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":licenseType", null, "/response/results/result/metadata/oaf:entity/oaf:result/bestlicense/@classname",XSDDatatype.XSDstring);
-			    
+//			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, "a", null, "bibo:Publication", null);
+//			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, "swpo:hasTitle", null, "/response/results/result/metadata/oaf:entity/oaf:result/title/text()", XSDDatatype.XSDstring);			    
+//			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":objectIdentifier", null, "/response/results/result/header/dri:objIdentifier/text()",null);
+//			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":dateofacceptance", null, "/response/results/result/metadata/oaf:entity/oaf:result/dateofacceptance/text()",XSDDatatype.XSDdate);
+//			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":language", null, "/response/results/result/metadata/oaf:entity/oaf:result/language/@classname",XSDDatatype.XSDstring);
+//			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":hasPublisher", null, "/response/results/result/metadata/oaf:entity/oaf:result/publisher/text()",XSDDatatype.XSDstring);
+//			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":description", null, "/response/results/result/metadata/oaf:entity/oaf:result/description/text()",XSDDatatype.XSDstring);
+//			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":license", null, "/response/results/result/metadata/oaf:entity/oaf:result/bestlicense/@classid",XSDDatatype.XSDstring);
+//			    template.addTriplePattern("/response/results/result/header/dri:objIdentifier/text()", null, ":licenseType", null, "/response/results/result/metadata/oaf:entity/oaf:result/bestlicense/@classname",XSDDatatype.XSDstring);
+//			    
 			    // Not support
 			    // template.addTriplePattern(":OpenAIREDataModel", null, ":hasAuthor", null, "/response/results/result/metadata/oaf:entity/oaf:result/rels/rel/to[class="hasAuthor"]/text()",XSDDatatype.XSDstring);			    			    
 			    // handler.setTemplateRDF(template);
@@ -62,7 +62,7 @@ public class CustomizedSaxYFilterExample {
 			    // End of publications.xml. It's subject is related to :OpenAIREDataModel.
 			    handler.setTemplateRDF(template);
 			    
-			    InputStream    xmlInput  = new FileInputStream("publications_template.xml");
+			    InputStream    xmlInput  = new FileInputStream("STELL-I_3.rtml");
 			    //InputStream    xmlInput  = new FileInputStream("STELL-I_3.rtml");
 			    //InputStream    xmlInput  = new FileInputStream("publications.xml");
 				//InputStream xmlInput = new FileInputStream("dblp_small.xml");			    
@@ -103,7 +103,8 @@ public class CustomizedSaxYFilterExample {
 				long elapsedTime = stopTime - startTime;
 				SumTime += elapsedTime;
 			    //handler.model.write(new FileWriter("dblp_small_customized.rdf"), "RDF/XML-ABBREV");
-				handler.model.write(System.out, "N-TRIPLES");
+				handler.model.write(System.out, "TTL");
+				System.out.println("prefix num: "+ template.prefixSet.size());
 			    // System.out.println(SAXYFilterHandler.outputStream);
 				//TimeUnit.MILLISECONDS.sleep(2000);
 			}

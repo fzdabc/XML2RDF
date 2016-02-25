@@ -6,7 +6,8 @@ public class BasicExample {
 	public static void main(String[] args) {
 		GenericTransformer trans = new GenericTransformer();
 		//trans.transform("E:/Downloads/dblp_small.xml","dblp_small.rdf");
-		trans.transform("publications.xml","publications.rdf");
+		//trans.transform("example.xml","example.rdf");
+		trans.transform("ExampleTopology.xml","ExampleTopology.rdf");
 	}
 
 }
